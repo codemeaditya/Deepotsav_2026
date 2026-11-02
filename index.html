@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#24080f">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A personal Diwali surprise made with love.">
+
+  <title>Deepotsav — A Diwali Surprise</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- BACKGROUND EFFECTS -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <a class="brand" href="#" aria-label="Deepotsav home">
+      <span class="brand-mark">✦</span>
+      <span>DEEPO<span class="gold-text">TSAV</span></span>
+    </a>
+
+    <div class="topbar-right">
+
+      <span class="edition">DIWALI · 2026</span>
+
+      <button
+        class="music-toggle"
+        id="musicToggle"
+        type="button"
+        aria-label="Enable music"
+      >
+        <span class="music-icon">♫</span>
+        <span id="musicToggleText">Music starting…</span>
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =================================
+         CREATOR DASHBOARD
+    ================================== -->
+
+    <section class="creator-view" id="creatorView">
+
+      <div class="creator-intro">
+
+        <span class="eyebrow">
+          <span class="eyebrow-line"></span>
+          THE FESTIVAL OF LIGHTS
+          <span class="eyebrow-line"></span>
+        </span>
+
+        <h1>
+          Create a little<br>
+          <em>Diwali magic.</em>
+        </h1>
+
+        <p class="intro-copy">
+          Make a personal celebration for someone special.
+          Add their name, write a heartfelt note, and send
+          them a little light.
+        </p>
+
+      </div>
+
+
+      <!-- CREATOR FORM -->
+
+      <div class="creator-card">
+
+        <div class="card-heading">
+
+          <div>
+            <span class="step-label">YOUR PERSONAL GREETING</span>
+            <h2>Make it personal</h2>
+          </div>
+
+          <span class="card-flower">✺</span>
+
+        </div>
+
+
+        <form id="wishForm">
+
+          <div class="field-grid">
+
+            <label class="field">
+
+              <span>Sending wishes to</span>
+
+              <input
+                id="recipientInput"
+                type="text"
+                maxlength="45"
+                placeholder="e.g. Mummy & Papa"
+                required
+              >
+
+            </label>
+
+
+            <label class="field">
+
+              <span>Your name</span>
+
+              <input
+                id="senderInput"
+                type="text"
+                maxlength="45"
+                placeholder="e.g. Aditya"
+                required
+              >
+
+            </label>
+
+          </div>
+
+
+          <label class="field">
+
+            <span>
+              Your personal message
+              <small>(optional)</small>
+            </span>
+
+            <textarea
+              id="messageInput"
+              rows="3"
+              maxlength="180"
+              placeholder="May your home glow with happiness, peace and prosperity..."
+            ></textarea>
+
+          </label>
+
+
+          <label class="field">
+
+            <span>Choose the music mood</span>
+
+            <select id="musicMood">
+
+              <option value="traditional">
+                Traditional instrumental 🪔
+              </option>
+
+              <option value="celebration">
+                Celebration instrumental 🎉
+              </option>
+
+            </select>
+
+          </label>
+
+
+          <div class="privacy-note">
+            <span>✧</span>
+            Your greeting is created in this browser. No account needed.
+          </div>
+
+
+          <button class="primary-btn full-btn" type="submit">
+            Create their Diwali surprise
+            <span>↗</span>
+          </button>
+
+        </form>
+
+      </div>
+
+
+      <p class="creator-foot">
+        MADE TO SHARE LIGHT & HAPPINESS
+        <span>✦</span>
+      </p>
+
+    </section>
+
+
+
+    <!-- =================================
+         RECIPIENT EXPERIENCE
+    ================================== -->
+
+    <section
+      class="experience hidden"
+      id="experience"
+      aria-live="polite"
+    >
+
+      <!-- PROGRESS BAR -->
+
+      <div
+        class="progress-track"
+        id="progressTrack"
+        aria-label="Greeting progress"
+      >
+
+        <span class="progress-segment active"></span>
+        <span class="progress-segment"></span>
+        <span class="progress-segment"></span>
+        <span class="progress-segment"></span>
+
+      </div>
+
+
+
+      <!-- =================================
+           SLIDE 1 : WELCOME
+      ================================== -->
+
+      <section class="slide active" data-slide="0">
+
+        <div class="slide-content welcome-content">
+
+          <div class="ornament">✺</div>
+
+          <span class="eyebrow">
+            A LITTLE SURPRISE FOR YOU
+          </span>
+
+          <h1>
+            Something special<br>
+            is <em>waiting for you.</em>
+          </h1>
+
+          <p class="slide-copy">
+            A moment of light, love and celebration —
+            made just for you.
+          </p>
+
+          <button class="primary-btn" data-next>
+            Open your surprise
+            <span>→</span>
+          </button>
+
+          <span class="micro-note">
+            TAKE A MOMENT · ENJOY THE MAGIC
+          </span>
+
+        </div>
+
+
+        <!-- DIYA -->
+
+        <div class="welcome-diya" aria-hidden="true">
+
+          <div class="flame"></div>
+          <div class="diya-bowl"></div>
+          <div class="diya-base"></div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================
+           SLIDE 2 : CAMERA
+      ================================== -->
+
+      <section class="slide" data-slide="1">
+
+        <div class="slide-content camera-content">
+
+          <span class="eyebrow">
+            A MEMORY TO KEEP
+          </span>
+
+          <h2>
+            Let's capture<br>
+            <em>a little joy.</em>
+          </h2>
+
+          <p class="slide-copy">
+            You can take an optional photo for this moment.
+            Your photo stays on this device unless you
+            choose to share it yourself.
+          </p>
+
+
+          <!-- CAMERA FRAME -->
+
+          <div class="camera-frame">
+
+            <video
+              id="cameraVideo"
+              autoplay
+              playsinline
+              muted
+              class="hidden"
+            ></video>
+
+            <canvas
+              id="cameraCanvas"
+              class="hidden"
+            ></canvas>
+
+            <div
+              class="camera-placeholder"
+              id="cameraPlaceholder"
+            >
+
+              <span class="camera-symbol">◎</span>
+
+              <span>
+                Your camera preview will appear here
+              </span>
+
+            </div>
+
+
+            <img
+              id="capturedPhoto"
+              class="captured-photo hidden"
+              alt="Your captured photo"
+            >
+
+          </div>
+
+
+          <p class="camera-status" id="cameraStatus">
+            Camera is off until you choose to turn it on.
+          </p>
+
+
+          <!-- CAMERA BUTTONS -->
+
+          <div class="button-row">
+
+            <button
+              class="secondary-btn"
+              id="startCameraBtn"
+              type="button"
+            >
+              Turn on camera
+            </button>
+
+
+            <button
+              class="primary-btn hidden"
+              id="captureBtn"
+              type="button"
+            >
+              Take photo
+            </button>
+
+
+            <button
+              class="secondary-btn hidden"
+              id="retakeBtn"
+              type="button"
+            >
+              Retake
+            </button>
+
+          </div>
+
+
+          <div class="slide-actions">
+
+            <button class="text-btn" data-next>
+              Skip this step →
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================
+           SLIDE 3 : PERSONAL GREETING
+      ================================== -->
+
+      <section class="slide" data-slide="2">
+
+
+        <!-- GREETING FIREWORKS -->
+
+        <div
+          class="firework-field greeting-fireworks"
+          id="greetingFireworks"
+          aria-hidden="true"
+        ></div>
+
+
+        <div class="slide-content wish-content">
+
+          <span class="eyebrow">
+            WITH LOVE & WARM WISHES
+          </span>
+
+
+          <!-- PHOTO FRAME -->
+
+          <div
+            class="greeting-photo-frame"
+            id="greetingPhotoFrame"
+          >
+
+            <img
+              id="greetingPhoto"
+              class="hidden"
+              alt="Your Diwali memory"
+            >
+
+
+            <div
+              id="greetingPhotoPlaceholder"
+              class="greeting-photo-placeholder"
+            >
+
+              <span>✦</span>
+
+              <small>
+                Your special moment
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <!-- PERSONALIZED NAME -->
+
+          <p class="dear-line">
+
+            Dear
+            <strong id="recipientName">Friend</strong>,
+
+          </p>
+
+
+          <!-- GREETING -->
+
+          <h2>
+            May your Diwali<br>
+            be filled with <em>light.</em>
+          </h2>
+
+
+          <!-- PERSONAL MESSAGE -->
+
+          <p
+            class="personal-message"
+            id="personalMessage"
+          >
+            May your home glow with happiness,
+            peace and prosperity.
+          </p>
+
+
+          <!-- SIGNATURE -->
+
+          <div class="signature">
+
+            <span>With warm wishes,</span>
+
+            <strong id="senderName">
+              Someone special
+            </strong>
+
+          </div>
+
+
+
+          <!-- PHOTO ACTIONS -->
+
+          <div class="greeting-photo-actions">
+
+            <button
+              class="secondary-btn"
+              id="downloadPhotoBtn"
+              type="button"
+            >
+              ↓ Download Photo
+            </button>
+
+
+            <button
+              class="text-btn"
+              id="retakeGreetingPhotoBtn"
+              type="button"
+            >
+              Retake Photo
+            </button>
+
+          </div>
+
+
+
+          <!-- CONTINUE -->
+
+          <button
+            class="primary-btn greeting-continue"
+            data-next
+          >
+            Let the celebration begin
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================
+           SLIDE 4 : FINAL CELEBRATION
+      ================================== -->
+
+      <section
+        class="slide celebration-slide"
+        data-slide="3"
+      >
+
+        <div class="celebration-content">
+
+          <span class="eyebrow">
+            LIGHT · LOVE · TOGETHERNESS
+          </span>
+
+
+          <!-- GRAND DIYA -->
+
+          <div
+            class="grand-diya"
+            aria-hidden="true"
+          >
+
+            <div class="grand-flame"></div>
+            <div class="grand-bowl"></div>
+            <div class="grand-stand"></div>
+
+          </div>
+
+
+          <p class="grand-kicker">
+            WISHING YOU A BRIGHT & BEAUTIFUL
+          </p>
+
+
+          <h1>
+            HAPPY<br>
+            <em>DIWALI</em>
+          </h1>
+
+
+          <span class="year">
+            20 26
+          </span>
+
+
+          <p class="grand-message">
+            May light always find its way to you.
+          </p>
+
+
+
+          <!-- FINAL ACTIONS -->
+
+          <div class="celebration-actions">
+
+            <button
+              class="primary-btn"
+              id="shareBtn"
+              type="button"
+            >
+              Share the happiness
+              <span>↗</span>
+            </button>
+
+
+            <button
+              class="text-btn"
+              id="restartBtn"
+              type="button"
+            >
+              Experience again ↺
+            </button>
+
+          </div>
+
+
+          <p class="made-with">
+            A LITTLE LIGHT, SENT WITH LOVE
+            <span>✦</span>
+          </p>
+
+        </div>
+
+
+        <!-- FIREWORKS -->
+
+        <div
+          class="firework-field"
+          id="fireworkField"
+          aria-hidden="true"
+        ></div>
+
+      </section>
+
+
+
+      <!-- =================================
+           SLIDE NAVIGATION
+      ================================== -->
+
+      <nav
+        class="slide-nav"
+        aria-label="Slide navigation"
+      >
+
+        <button
+          class="nav-back"
+          id="backBtn"
+          type="button"
+        >
+          ← Back
+        </button>
+
+
+        <span id="slideCount">
+          01 / 04
+        </span>
+
+
+        <button
+          class="nav-next"
+          id="nextBtn"
+          type="button"
+        >
+          Next →
+        </button>
+
+      </nav>
+
+    </section>
+
+
+
+    <!-- =================================
+         SHARE PANEL
+    ================================== -->
+
+    <section
+      class="share-panel hidden"
+      id="sharePanel"
+      aria-live="polite"
+    >
+
+      <div class="share-panel-heading">
+
+        <span class="step-label">
+          YOUR PERSONALIZED LINK
+        </span>
+
+        <h2>
+          Your greeting is ready
+        </h2>
+
+        <p>
+          Copy this link or share it directly.
+          The recipient's name and selected music are included.
+        </p>
+
+      </div>
+
+
+      <!-- GENERATED URL -->
+
+      <div class="generated-link-row">
+
+        <input
+          id="generatedUrl"
+          type="url"
+          readonly
+          aria-label="Personalized greeting link"
+        >
+
+
+        <button
+          id="copyLinkBtn"
+          type="button"
+        >
+          Copy link
+        </button>
+
+      </div>
+
+
+
+      <!-- SHARE BUTTONS -->
+
+      <div class="share-panel-actions">
+
+        <button
+          class="primary-btn"
+          id="shareAgainBtn"
+          type="button"
+        >
+          Share on WhatsApp ↗
+        </button>
+
+
+        <button
+          class="secondary-btn"
+          id="createAnotherBtn"
+          type="button"
+        >
+          Create another greeting
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         INVALID LINK SCREEN
+    ================================== -->
+
+    <section
+      class="not-found hidden"
+      id="notFound"
+    >
+
+      <span class="ornament">✦</span>
+
+      <h2>
+        This greeting link<br>
+        <em>needs a little check.</em>
+      </h2>
+
+      <p>
+        Please ask the sender to share the link again.
+      </p>
+
+
+      <button
+        class="secondary-btn"
+        id="homeBtn"
+      >
+        Create a greeting
+      </button>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =================================
+       AUDIO
+  ================================== -->
+
+  <audio
+    id="backgroundMusic"
+    loop
+    preload="auto"
+  ></audio>
+
+
+
+  <!-- TOAST NOTIFICATION -->
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+  ></div>
+
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <span>
+      DEEPO<span class="gold-text">TSAV</span> 2026
+    </span>
+
+    <span>
+      CELEBRATE THE LIGHT WITH KINDNESS
+    </span>
+
+  </footer>
+
+
+
+  <!-- MAIN JAVASCRIPT -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
